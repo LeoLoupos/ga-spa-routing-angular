@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        console.log('It Works');
+        console.log(event.toString());
         ga('set', 'page', event.urlAfterRedirects);
         ga('send', 'pageview');
       }
