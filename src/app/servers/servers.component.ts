@@ -17,6 +17,30 @@ export class ServersComponent implements OnInit {
     this.googleAnalyticsEventsService.emitEvent('testCategory', 'testAction', 'testLabel', 10);
     console.log('Event Emmited');
   }
+  submitScreenView() {
+    this.googleAnalyticsEventsService.emitScreenView('testCategory', 'testAction', 'testLabel', 10);
+    console.log('ScreenView Emmited');
+  }
+  submitTransaction() {
+    this.googleAnalyticsEventsService.emitTransaction('testCategory', 'testAction', 'testLabel', 10);
+    console.log('Transaction Emmited');
+  }
+  submitItem() {
+    this.googleAnalyticsEventsService.emitItem('testCategory', 'testAction', 'testLabel', 10);
+    console.log('Item Emmited');
+  }
+  submitSocial() {
+    this.googleAnalyticsEventsService.emitSocial('testCategory', 'testAction', 'testTarget');
+    console.log('Social Emmited');
+  }
+  submitException() {
+    this.googleAnalyticsEventsService.emitException('testCategory', 'testAction');
+    console.log('Exception Emmited');
+  }
+  submitTiming() {
+    this.googleAnalyticsEventsService.emitTiming('testCategory', 'testAction', 'testLabel', 10);
+    console.log('Timing Emmited');
+  }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();

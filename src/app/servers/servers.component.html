@@ -10,7 +10,21 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <hr>
     <a routerLink="/servers" (click)="submitEvent()">Send Analytics Event</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitScreenView()">Send ScreenView</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitTransaction()">Send Transaction</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitItem()">Send Analytics Item</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitSocial()">Send Social</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitException()">Send Exception</a>
+    <hr>
+    <a routerLink="/servers" (click)="submitTiming()">Send Timing</a>
+    <hr>
     <!-- Absolute path : /servers Relative : servers (if im already on /servers its a bug trying to hit /servers/servers)  -->
     <app-edit-server></app-edit-server>
     <hr>

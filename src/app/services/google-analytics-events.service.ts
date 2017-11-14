@@ -26,15 +26,17 @@ export class GoogleAnalyticsEventsService {
     // });
   }
 
-  public emitScreenView(eventCategory: string,
-                   eventAction: string,
-                   eventLabel: string = null,
-                   eventValue: number = null) {
+  public emitScreenView(screenName: string,
+                        appName: string,
+                        appId: string = null,
+                        appVersion: number = null,
+                        appInstallerId: number = null) {
     ga('send', 'screenview', {
-      eventCategory: eventCategory,
-      eventLabel: eventLabel,
-      eventAction: eventAction,
-      eventValue: eventValue
+      screenName : screenName,
+      appName : appName,
+      appId : appId,
+      appVersion : appVersion,
+      appInstallerId : appInstallerId
     });
   }
 
@@ -50,7 +52,7 @@ export class GoogleAnalyticsEventsService {
     });
   }
 
-  public emitItem(eventCategory: string,
+  public emitItem( eventCategory: string,
                    eventAction: string,
                    eventLabel: string = null,
                    eventValue: number = null) {
@@ -72,27 +74,31 @@ export class GoogleAnalyticsEventsService {
     });
   }
 
-  public emitException(eventCategory: string,
-                   eventAction: string,
-                   eventLabel: string = null,
-                   eventValue: number = null) {
+  public emitException(exDescription: string,
+                       exFatal: string,
+                  ) {
     ga('send', 'exception', {
-      eventCategory: eventCategory,
-      eventLabel: eventLabel,
-      eventAction: eventAction,
-      eventValue: eventValue
+      exDescription: exDescription,
+      exFatal: exFatal
     });
   }
 
-  public emitTiming(eventCategory: string,
-                   eventAction: string,
-                   eventLabel: string = null,
-                   eventValue: number = null) {
+  public emitTiming(timingCategory: string,
+                    timingVar: string,
+                    timingValue: string = null,
+                    timingLabel: number = null) {
     ga('send', 'timing', {
-      eventCategory: eventCategory,
-      eventLabel: eventLabel,
-      eventAction: eventAction,
-      eventValue: eventValue
+      timingCategory: timingCategory,
+      timingVar: timingVar,
+      timingValue: timingValue,
+      timingLabel: timingLabel
     });
   }
+
+//   ga('send', {
+//   hitType: 'timing',
+//   timingCategory: 'JS Dependencies',
+//   timingVar: 'load',
+//   timingValue: 3549
+// });
 }
